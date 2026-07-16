@@ -1,4 +1,4 @@
-# install.ps1 — Peanut Butter Collective public installer (stage 0). Human-run.
+# install.ps1 — Peanut Butter Collective public installer (stage 0).
 #
 #   irm https://raw.githubusercontent.com/peanut-butter-collective/.github/main/install.ps1 | iex
 #

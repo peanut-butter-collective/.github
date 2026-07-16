@@ -1,5 +1,5 @@
 #!/bin/sh
-# install.sh — Peanut Butter Collective public installer (stage 0). Human-run.
+# install.sh — Peanut Butter Collective public installer (stage 0).
 #
 #   curl -fsSL https://raw.githubusercontent.com/peanut-butter-collective/.github/main/install.sh | sh
 #

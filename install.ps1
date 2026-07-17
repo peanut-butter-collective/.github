@@ -31,8 +31,11 @@ if (Have gh) { Info "gh already installed" } else {
 $env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' +
             [System.Environment]::GetEnvironmentVariable('Path','User')
 
-# Authenticate.
-& gh auth status *> $null
+# Authenticate. gh writes to stderr when not signed in; under
+# $ErrorActionPreference='Stop' Windows PowerShell turns a native command's
+# stderr into a terminating NativeCommandError before we can read the exit
+# code, so relax the preference in a child scope and check $LASTEXITCODE.
+& { $ErrorActionPreference = 'Continue'; gh auth status *> $null }
 if ($LASTEXITCODE -ne 0) {
     Info "Signing you in to GitHub (you must be a peanut-butter-collective member)..."
     gh auth login

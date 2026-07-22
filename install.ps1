@@ -1,4 +1,4 @@
-# install.ps1 — Peanut Butter Collective public installer (stage 0).
+# install.ps1 - Peanut Butter Collective public installer (stage 0).
 #
 #   irm https://raw.githubusercontent.com/peanut-butter-collective/.github/main/install.ps1 | iex
 #
@@ -43,4 +43,4 @@ if ($LASTEXITCODE -ne 0) {
 
 # Hand off to the private workspace installer.
 Info "Fetching and running the PBC workspace installer..."
-gh api repos/peanut-butter-collective/pbc-manifest/contents/install.ps1 -H "Accept: application/vnd.github.raw" | iex
+gh api repos/peanut-butter-collective/pbc-manifest/contents/install.ps1 -H "Accept: application/vnd.github.raw" | Out-String | iex
